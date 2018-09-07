@@ -9,25 +9,28 @@ function log() {
     printf "${PROG}  ${1}\n" | tee -a run.log
 }
 
+IS_POD=${1:-n}
 
-export GOPATH=$PWD
-mkdir -p src/github.com/hyperledger
-cd src/github.com/hyperledger
-if [ ! -e fabric-test ]; then
-  git clone https://github.com/hyperledger/fabric-test
+if [ "$IS_POD" = "n" -o "$IS_POD" = "N" ]; then
+	export GOPATH=$PWD
+	mkdir -p src/github.com/hyperledger
+	cd src/github.com/hyperledger
+	if [ ! -e fabric-test ]; then
+	  git clone https://github.com/hyperledger/fabric-test
+	fi
+
+	cd fabric-test/tools/PTE
+
+	git checkout release-1.1 && git pull origin release-1.1
+
+	rm -rf inputFiles node_modules/ package-lock.json tmp.json
+	npm install
+
+	for dest_file in config-chan1-TLS.json genPteConfigFiles.js config.json
+	do
+	  cp ${GOPATH}/${dest_file} .
+	done
 fi
-
-cd fabric-test/tools/PTE
-
-git checkout release-1.1 && git pull origin release-1.1
-
-rm -rf inputFiles node_modules/ package-lock.json tmp.json
-npm install
-
-for dest_file in config-chan1-TLS.json genPteConfigFiles.js config.json
-do
-  cp ${GOPATH}/${dest_file} .
-done
 
 mkdir -p inputFiles
 
