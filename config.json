@@ -1,0 +1,58 @@
+{
+    "channel" : "defaultchannel",
+    "orgs": "org1",
+    "chaincode" : "samplecc",
+    "cc_version" : "v0",
+    "cc_path" : "github.com/hyperledger/fabric-test/chaincodes/samplecc/go",
+    "deploy_args" : [],
+    "transactionMode": "Constant",
+    "transactionType" :"Invoke",
+    "invokeType" : "Move",
+    "targetPeers": "OrgAnchor",
+    "processes" : "8",
+    "requests" :"100",
+    "duration": "0",
+    "transaction_orgs" : "org1",
+    "SCFile": "config-chan1-TLS.json",
+    "ccType": "ccchecker",
+    "ccOpt": {
+        "keyIdx": [1],
+        "keyPayLoad": [2],
+        "keyStart": "0",
+        "payLoadMin": "1024",
+        "payLoadMax": "1024"
+    },
+    "burstOpt": {
+        "burstFreq0":  "10",
+        "burstDur0":  "10",
+        "burstFreq1": "10",
+        "burstDur1": "10"
+    },
+    "mixOpt": {
+        "mixQuery": "false",
+        "mixFreq": "300"
+    },
+    "constantOpt": {
+        "recHist": "HIST",
+        "constFreq": "20",
+        "devFreq": "2"
+    },
+    "listOpt": {
+        "org1": ["peer1"]
+    },
+    "eventOpt": {
+        "type": "FilteredBlock",
+        "listener": "Block",
+        "timeout": "240000"
+    },
+    "invoke": {
+        "query": {
+          "fcn": "invoke",
+          "args": [ "get", "a1" ]
+        },
+        "move": {
+          "fcn": "invoke",
+          "args": [ "put", "a1", "1" ]
+        }
+      }
+}

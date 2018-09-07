@@ -1,0 +1,11 @@
+bin/
+cacert.pem
+creds/org1admin
+creds/org2admin
+pteconfigs
+run.log
+src/**
+config-chan1-TLS.json
+.config/
+.node-gyp/
+.npm/

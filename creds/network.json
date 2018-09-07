@@ -1,0 +1,14 @@
+{
+  "org1": {
+    "url": "https://ibmblockchain-staging-starter.stage1.ng.bluemix.net",
+    "network_id": "n103ec89a2af44061a8648b11b6b9f0d8",
+    "key": "org1",
+    "secret": "4GDRpxJoLBArNf1u4BrhNb_nHAbp6ZgqSV2iReRotA1ecJWw4hbUTXIIgpW_EW3T"
+  },
+  "org2": {
+    "url": "https://ibmblockchain-staging-starter.stage1.ng.bluemix.net",
+    "network_id": "n103ec89a2af44061a8648b11b6b9f0d8",
+    "key": "org2",
+    "secret": "L_7YcS8qgTeYaAk_fdZf6kPLFTjuAtIp87MjL27GwPPo7t_rQiW_OGYiHLFxl72p"
+  }
+}
