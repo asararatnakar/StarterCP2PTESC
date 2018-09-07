@@ -44,6 +44,7 @@ echo "sdk=node ${CFG_DIR}/query.json" >& ${CFG_DIR}/query.txt
 node genPteConfigFiles.js "deploy"
 node genPteConfigFiles.js "transaction"
 
-./pte_driver.sh inputFiles/install.txt
-./pte_driver.sh inputFiles/instantiate.txt
-
+echo "Execute the following commands to Install/Instantiate SampleCC"
+echo "./pte_driver.sh inputFiles/install.txt"
+echo "./pte_driver.sh inputFiles/instantiate.txt"
+echo
